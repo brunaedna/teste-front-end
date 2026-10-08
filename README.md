@@ -4,6 +4,10 @@
 
 Página de e-commerce de tecnologia desenvolvida com React, TypeScript e Sass, seguindo o layout do Figma. Os produtos são carregados do JSON da Econverse e podem ser consultados em um modal. A página utiliza HTML semântico e metadados básicos de SEO.
 
+## Demo
+
+[Acesse o site](https://teste-front-end.pages.dev/).
+
 ## Como usar
 
 Requisitos: Node.js 24 e npm 11 ou superior.

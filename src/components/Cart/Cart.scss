@@ -1,0 +1,42 @@
+.cart {
+  h3 {
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+  ul {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 20px;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 16px;
+  }
+  li strong {
+    font-size: 14px;
+  }
+  li p {
+    font-size: 13px;
+  }
+  button {
+    padding: 4px;
+    border: 0;
+    background: transparent;
+    color: #3442b5;
+    font-size: 12px;
+  }
+  &__total {
+    font-weight: 700;
+    margin-top: 24px;
+  }
+  &__note {
+    margin-top: 12px;
+    color: #676767;
+    font-size: 12px;
+  }
+}

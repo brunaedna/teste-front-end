@@ -1,0 +1,44 @@
+@use '../../styles/variables' as tokens;
+
+.dialog {
+  position: fixed;
+  width: min(769px, calc(100% - 32px));
+  max-width: calc(100% - 32px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 40px;
+  border: 0;
+  border-radius: 6px;
+  background: tokens.$color-surface;
+  color: tokens.$color-text;
+  overflow-y: auto;
+
+  &::backdrop {
+    background: rgb(0 0 0 / 54%);
+  }
+
+  &__close {
+    position: absolute;
+    top: 7.5px;
+    right: 19.5px;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    img {
+      grid-area: 1 / 1;
+      transform: rotate(40.91deg);
+    }
+    img + img {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @media (max-width: 599px) {
+    padding: 48px 24px 24px;
+  }
+}

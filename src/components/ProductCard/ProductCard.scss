@@ -1,0 +1,79 @@
+@use '../../styles/variables' as tokens;
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  height: 100%;
+  padding: 32px 12.39px 16px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 3px 19px rgb(0 0 0 / 22%);
+  &__image {
+    display: grid;
+    place-items: center;
+    height: 228px;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 278.1px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    img {
+      display: block;
+      width: 100%;
+      max-width: 263px;
+      height: 228px;
+      object-fit: cover;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+  &__name {
+    min-height: 46px;
+    margin-top: 9px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 23px;
+    button {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      text-align: left;
+      font: inherit;
+      overflow-wrap: anywhere;
+    }
+  }
+  &__previous {
+    margin-top: 12px;
+    height: 24px;
+  }
+  &__price {
+    margin-top: 2px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+  &__installment {
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  &__shipping {
+    margin-top: 7px;
+    color: tokens.$color-button;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  &__buy {
+    margin-top: 12px;
+    min-height: 44px;
+    width: 100%;
+    max-width: 275.85px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+}

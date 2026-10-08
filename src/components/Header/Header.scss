@@ -1,0 +1,153 @@
+@use '../../styles/variables' as tokens;
+
+.header {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  &__benefits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 119px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: url('/assets/header-line.svg') no-repeat left bottom;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: #9f9f9f;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    strong {
+      color: tokens.$color-primary;
+      font-weight: 600;
+    }
+  }
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    height: 72px;
+    > a img {
+      display: block;
+    }
+  }
+  &__actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    button:first-child img {
+      transform: scaleX(-1);
+    }
+  }
+  &__actions button {
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  &__cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    display: grid;
+    place-items: center;
+    min-width: 18px;
+    height: 18px;
+    padding-inline: 3px;
+    border-radius: 50%;
+    background: tokens.$color-button;
+    color: #fff;
+    font-size: 10px;
+  }
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 91px;
+    height: 40px;
+    background: url('/assets/header-line.svg') no-repeat left top;
+    box-shadow: 0 8px 16px rgb(57 48 19 / 12%);
+  }
+  &__navigation a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #9f9f9f;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  &__navigation a[aria-current='true'] {
+    color: tokens.$color-primary;
+  }
+  @media (min-width: 1440px) {
+    &__navigation {
+      justify-content: flex-start;
+      padding-left: 69px;
+    }
+    &__navigation a {
+      flex-shrink: 0;
+      justify-content: center;
+    }
+    @each $index, $width in (1: 121px, 2: 98px, 3: 42px, 4: 38px, 5: 91px, 6: 97px, 7: 108px) {
+      &__navigation a:nth-child(#{$index}) {
+        width: $width;
+      }
+    }
+  }
+  @media (min-width: 1200px) and (max-width: 1439px) {
+    &__navigation {
+      gap: clamp(20px, calc((100% - 595px) / 6), 91px);
+    }
+  }
+  @media (max-width: 1199px) {
+    &__navigation {
+      justify-content: space-around;
+      gap: 20px;
+    }
+    &__benefits {
+      gap: 40px;
+    }
+    &__actions {
+      gap: 16px;
+    }
+  }
+  @media (max-width: 767px) {
+    &__benefits {
+      height: 30px;
+      gap: 0;
+      li {
+        display: none;
+      }
+      li:first-child {
+        display: flex;
+      }
+    }
+    &__main {
+      flex-wrap: wrap;
+      height: auto;
+      gap: 16px;
+      padding-block: 16px;
+    }
+    &__actions {
+      gap: 14px;
+    }
+    &__actions button:first-child {
+      display: none;
+    }
+    &__navigation {
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-inline: 12px;
+    }
+  }
+}

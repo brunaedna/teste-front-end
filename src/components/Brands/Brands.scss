@@ -1,0 +1,56 @@
+@use '../../styles/variables' as tokens;
+
+.brands {
+  margin-top: 90px;
+  scroll-margin-top: 24px;
+  h2 {
+    color: tokens.$color-button;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 45px;
+    transform: translateX(-0.5px);
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+    margin: 32px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    flex: 0 0 211px;
+  }
+  a {
+    display: flex;
+    align-items: flex-start;
+    padding: 87px 47px;
+    width: 211px;
+    height: 211px;
+    border-radius: 50%;
+    box-shadow: 0 7px 20px rgb(0 0 0 / 13%);
+    background: #fff;
+  }
+  @media (min-width: 1280px) {
+    ul {
+      transform: translateX(-7px);
+    }
+  }
+  @media (max-width: 1279px) {
+    ul {
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding: 0 8px 16px;
+    }
+  }
+  @media (max-width: 599px) {
+    margin-top: 56px;
+    h2 {
+      font-size: 24px;
+    }
+    ul {
+      gap: 24px;
+    }
+  }
+}

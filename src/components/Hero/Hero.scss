@@ -1,0 +1,84 @@
+@use '../../styles/variables' as tokens;
+
+.hero {
+  position: relative;
+  height: 390px;
+  overflow: hidden;
+  color: #fff;
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 67.1%;
+    background: linear-gradient(90deg, rgb(0 0 0 / 80%), transparent);
+  }
+  &__content {
+    position: relative;
+    z-index: 1;
+    padding-top: 78px;
+  }
+  h1 {
+    max-width: 822px;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 50px;
+  }
+  p {
+    margin-top: 18px;
+    font-size: 32px;
+    line-height: 48px;
+  }
+  strong {
+    color: tokens.$color-yellow;
+  }
+  .button {
+    width: 206px;
+    min-height: 50px;
+    margin: 41px 0 0 7px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: none;
+  }
+  @media (min-width: 1440px) {
+    h1 {
+      position: relative;
+      left: 1px;
+    }
+    p {
+      position: relative;
+      left: -2px;
+    }
+  }
+  @media (max-width: 767px) {
+    height: 360px;
+    &__content {
+      padding-top: 55px;
+    }
+    &::after {
+      width: 100%;
+    }
+    h1 {
+      max-width: 480px;
+      font-size: clamp(28px, 6vw, 40px);
+      line-height: 1.15;
+    }
+    p {
+      margin-top: 20px;
+      font-size: 24px;
+      line-height: 1.5;
+    }
+    .button {
+      margin: 28px 0 0;
+    }
+    &__line-break {
+      display: none;
+    }
+  }
+}

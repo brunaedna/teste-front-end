@@ -1,0 +1,129 @@
+.footer {
+  &__main {
+    background: #f4f4f4;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+    min-height: 282px;
+    padding-block: 42px;
+  }
+  &__brand {
+    flex: 0 0 354px;
+    > a {
+      display: block;
+      width: max-content;
+      img {
+        display: block;
+      }
+    }
+    p {
+      margin-top: 18px;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 21px;
+    }
+  }
+  &__socials {
+    display: flex;
+    gap: 26px;
+    margin-top: 27px;
+    button {
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+  }
+  &__divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    height: 198px;
+    img {
+      flex-shrink: 0;
+      transform: rotate(90deg);
+    }
+  }
+  &__navigation {
+    display: grid;
+    grid-template-columns: 121px 150px 160px;
+    gap: 100px;
+    color: rgb(34 34 34 / 71%);
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+  ul {
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 16px;
+    li {
+      display: flex;
+    }
+  }
+  &__column button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: left;
+  }
+  &__column:last-child button {
+    font-family: 'Poppins', sans-serif;
+  }
+  &__copyright {
+    display: grid;
+    place-items: center;
+    min-height: 47px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 300;
+    text-align: center;
+  }
+  @media (max-width: 1279px) {
+    &__inner {
+      gap: 40px;
+    }
+    &__brand {
+      flex-basis: 30%;
+    }
+    &__navigation {
+      gap: 40px;
+    }
+  }
+  @media (max-width: 959px) {
+    &__inner {
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    &__brand {
+      flex-basis: 100%;
+      max-width: 354px;
+    }
+    &__divider {
+      display: none;
+    }
+    &__navigation {
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+  }
+  @media (max-width: 479px) {
+    &__navigation {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 32px;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@use '../../styles/variables' as tokens;
+
+.categories {
+  max-width: 1160px;
+  margin: 39px auto 0;
+  scroll-margin-top: 24px;
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    gap: 42px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    flex: 0 0 128px;
+  }
+  li:nth-child(3) {
+    flex-basis: 140px;
+    button {
+      margin-inline: 6px;
+    }
+  }
+  button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    width: 128px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #4e4e4e;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  &__icon {
+    display: grid;
+    position: relative;
+    width: 128px;
+    height: 128px;
+    border-radius: 10px;
+    background: #f4f4f4;
+    box-shadow: 0 4px 11px rgb(0 0 0 / 13%);
+    img {
+      position: absolute;
+      top: 34px;
+      left: 33px;
+    }
+  }
+  li:nth-child(n + 4):nth-child(-n + 6) .categories__icon img {
+    left: 34px;
+  }
+  li:last-child .categories__icon img {
+    top: 31px;
+    left: 34px;
+  }
+  @media (min-width: 1280px) {
+    transform: translateX(-1px);
+    button > span:last-child {
+      align-self: flex-start;
+    }
+    li:nth-child(1) button > span:last-child {
+      margin-left: 19px;
+    }
+    li:nth-child(2) button > span:last-child {
+      margin-left: 3px;
+    }
+    li:nth-child(3) button > span:last-child {
+      align-self: center;
+    }
+    li:nth-child(4) button > span:last-child {
+      width: 107px;
+      margin-left: 11px;
+      text-align: center;
+    }
+    li:nth-child(5) button > span:last-child {
+      margin-left: 41px;
+    }
+    li:nth-child(6) button > span:last-child {
+      margin-left: 1px;
+    }
+    li:nth-child(7) button > span:last-child {
+      margin-left: 44px;
+    }
+  }
+  button[aria-pressed='true'] {
+    color: tokens.$color-primary;
+    font-weight: 600;
+    .categories__icon {
+      background: #fff;
+      box-shadow: 0 2px 9px rgb(0 0 0 / 22%);
+    }
+  }
+  @media (max-width: 1279px) {
+    margin-inline: 24px;
+    ul {
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding: 10px 8px;
+      gap: 32px;
+    }
+  }
+  @media (max-width: 599px) {
+    margin-inline: 8px;
+    ul {
+      gap: 22px;
+    }
+  }
+}
